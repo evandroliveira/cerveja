@@ -1,9 +1,25 @@
 <ion-header>
   <ion-toolbar>
     <ion-title>
-      Tab Two
+      Tabela Clientes
     </ion-title>
   </ion-toolbar>
 </ion-header>
 
-<ion-content></ion-content>
+<ion-content>
+<ion-button (click)="atualizar()" >Atualizar</ion-button>
+
+    <ion-list lines="none">
+      <ion-list-header>
+        <ion-label>Clientes</ion-label>
+      </ion-list-header>
+      <ion-item *ngFor="let cli of dadosClientes">
+
+        <ion-label color="medium">{{cli.nome}}</ion-label>
+        <ion-label color="primary" text-wrap>{{cli.email}}</ion-label>
+        <ion-button slot="end" size="small" color="success" (click)="atualizar()" >Editar</ion-button>
+        <ion-button slot="end" size="small" color="danger" (click)="atualizar()" >Deletar</ion-button>
+      </ion-item>
+     
+    </ion-list>
+</ion-content>
